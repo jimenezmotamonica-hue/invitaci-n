@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boda Mónica y Pablo</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f7f3ef;
+  background-image: url('imagenes/fondo.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  color: #4a3f35;
+  text-align: center;
+}
+
+    .hero {
+      background: url('imagenes/invitacion.png') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .image {
+      width: 100%;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      margin-top: 20px;
+    }
+
+    .google-form {
+      width: 100%;
+      min-height: 1000px;
+      border: 0;
+    }
+
+    @media (max-width: 768px) {
+      .google-form {
+        height: 2400px;
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background-color: #c8a97e;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #b8956d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <img src="imagenes/invitacion.png" class="image" alt="Invitación">
+  </div>
+
+  <div class="section">
+    <img src="imagenes/mapa.png" class="image" alt="Ilustración boda">
+
+    <div class="card">
+      <iframe
+        class="google-form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSenZi2XfwaCn0yk5OhZqF_8-3RmUOeKSCX2rMxAhZlgp0C8VA/viewform?embedded=true"
+        scrolling="no">
+        Cargando formulario…
+      </iframe>
+    </div>
+  </div>
+
+</body>
+</html>
