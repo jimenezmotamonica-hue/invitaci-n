@@ -4,87 +4,121 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boda Mónica y Pablo</title>
+
   <style>
+
     body {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  background-color: #f7f3ef;
-  background-image: url('fondo.png');
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 100% auto;
-  color: #4a3f35;
-  text-align: center;
-}
-
-    .hero {
-      background: url('invitacion.png') center/cover no-repeat;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 3em;
-      background: rgba(0,0,0,0.3);
-      padding: 20px;
-      border-radius: 10px;
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #f7f3ef;
+      background-image: url('fondo.png');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 100% auto;
+      color: #4a3f35;
+      text-align: center;
     }
 
     .section {
-      padding: 40px 20px;
+      padding: 30px 20px;
       max-width: 700px;
       margin: auto;
     }
 
-    h2 {
-      margin-bottom: 10px;
-    }
-
     .image {
       width: 100%;
-      border-radius: 15px;
+      border-radius: 18px;
       margin: 20px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     .card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(4px);
+      padding: 30px;
+      border-radius: 20px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
-    .google-form {
+    h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-weight: normal;
+      font-size: 2rem;
+    }
+
+    .rsvp-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .rsvp-form input,
+    .rsvp-form textarea,
+    .rsvp-form select {
       width: 100%;
-      min-height: 1000px;
-      border: 0;
+      padding: 14px;
+      border: 1px solid #d8d2c8;
+      border-radius: 12px;
+      font-size: 16px;
+      font-family: Georgia, serif;
+      background: #fffdf9;
+      box-sizing: border-box;
     }
 
-    @media (max-width: 768px) {
-      .google-form {
-        height: 2400px;
-      }
+    .rsvp-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .bus-label {
+      text-align: left;
+      margin-top: 5px;
+      font-size: 15px;
     }
 
     button {
-      margin-top: 20px;
-      padding: 12px 25px;
+      margin-top: 10px;
+      padding: 14px;
       border: none;
-      border-radius: 25px;
+      border-radius: 14px;
       background-color: #c8a97e;
       color: white;
-      font-size: 1em;
+      font-size: 1rem;
+      font-family: Georgia, serif;
       cursor: pointer;
+      transition: 0.3s;
     }
 
     button:hover {
       background-color: #b8956d;
     }
+
+    @media (max-width: 768px) {
+
+      body {
+        background-size: contain;
+        background-position: center top;
+      }
+
+      .section {
+        padding: 20px 12px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+    }
+
   </style>
 </head>
+
 <body>
 
   <div class="section">
@@ -92,17 +126,63 @@
   </div>
 
   <div class="section">
-    <img src="mapa.png" class="image" alt="Ilustración boda">
+
+    <img src="mapa.png" class="image" alt="Mapa">
 
     <div class="card">
-      <iframe
-        class="google-form"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSenZi2XfwaCn0yk5OhZqF_8-3RmUOeKSCX2rMxAhZlgp0C8VA/viewform?embedded=true"
-        scrolling="no">
-        Cargando formulario…
-      </iframe>
+
+      <h2>Confirma tu asistencia</h2>
+
+      <form
+        action="https://formspree.io/f/mbdwzgvd"
+        method="POST"
+        class="rsvp-form"
+      >
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="Nueva confirmación boda"
+        >
+
+        <input
+          type="text"
+          name="nombre"
+          placeholder="Nombre y apellidos"
+          required
+        >
+
+        <input
+          type="number"
+          name="asistentes"
+          placeholder="Número de asistentes"
+          required
+        >
+
+        <textarea
+          name="alergias"
+          placeholder="Alergias o intolerancias"
+        ></textarea>
+
+        <label class="bus-label">
+          ¿Utilizarás el autobús?
+        </label>
+
+        <select name="autobus" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Sí">Sí</option>
+          <option value="No">No</option>
+        </select>
+
+        <button type="submit">
+          Confirmar asistencia
+        </button>
+
+      </form>
+
     </div>
+
   </div>
 
 </body>
-</html>
+</html>l>
